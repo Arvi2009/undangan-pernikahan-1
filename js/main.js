@@ -272,7 +272,7 @@ function initializeCountdown() {
 
 function updateCountdown() {
     // Wedding date: May 25, 2024, 09:00
-    const weddingDate = new Date(2024, 6, 25, 9, 0, 0).getTime();
+    const weddingDate = new Date(2024, 7, 25, 9, 0, 0).getTime();
     const now = new Date().getTime();
     const distance = weddingDate - now;
     
@@ -292,10 +292,10 @@ function updateCountdown() {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Update DOM with zero-padding
-    document.getElementById('days').textContent = String(days).padStart(2, '1');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '8');
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '9');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }
 
 // ============================================
