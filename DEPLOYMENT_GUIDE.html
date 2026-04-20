@@ -1,0 +1,694 @@
+<!-- 
+    🚀 DEPLOYMENT GUIDE - Undangan Pernikahan Digital
+    Panduan Lengkap untuk Deploy ke Production
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Guide - Undangan Pernikahan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFF0F5 100%);
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #D4A574;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        h2 {
+            color: #3D2817;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #D4A574;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #3D2817;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .platform {
+            background: #FFF8F3;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 5px solid #D4A574;
+        }
+        
+        .platform h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .platform .icon {
+            font-size: 1.5rem;
+        }
+        
+        .steps {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0 1rem 2rem;
+        }
+        
+        .step-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .step-item:last-child {
+            border-bottom: none;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: #D4A574;
+        }
+        
+        pre {
+            background: #2D1810;
+            color: #D4A574;
+            padding: 1rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+        
+        .checklist {
+            background: #FFF0F5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        .checklist-item {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            padding: 1rem;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            padding: 1rem;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .comparison-card {
+            background: #FFF8F3;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #D4A574;
+        }
+        
+        .comparison-card h4 {
+            color: #3D2817;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comparison-card .price {
+            font-size: 1.5rem;
+            color: #D4A574;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        
+        .comparison-card ul {
+            list-style: none;
+            margin: 1rem 0;
+            text-align: left;
+        }
+        
+        .comparison-card li {
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-card li::before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table th, table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background: #D4A574;
+            color: white;
+            font-weight: 600;
+        }
+        
+        table tr:hover {
+            background: #FFF8F3;
+        }
+        
+        .feature-list {
+            columns: 2;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            break-inside: avoid;
+        }
+        
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4A574, #C19A6B);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+        }
+        
+        .button.secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #D4A574;
+        }
+        
+        .faq-item {
+            background: #FFF8F3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 4px solid #D4A574;
+        }
+        
+        .faq-item strong {
+            color: #3D2817;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #D4A574;
+        }
+        
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            margin-left: 80px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #D4A574;
+        }
+        
+        .timeline-item h4 {
+            color: #3D2817;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-item p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Deployment Guide</h1>
+        <p class="subtitle">Panduan lengkap untuk deploy undangan pernikahan ke production</p>
+        
+        <!-- Pre-Deployment -->
+        <h2>✅ Sebelum Deploy (Pre-Deployment Checklist)</h2>
+        
+        <div class="checklist">
+            <h3>Testing Checklist:</h3>
+            <div class="checklist-item">
+                <input type="checkbox"> Desktop testing (Chrome, Firefox, Safari, Edge)
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Mobile testing (iOS Safari, Android Chrome)
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Tablet testing (iPad, Android tablet)
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test RSVP form submission
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test countdown timer
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test gallery & lightbox
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test musik play/pause
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test language toggle
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test guestbook (add & display)
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test URL parameter (?to=nama)
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test localStorage persistence
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test animations di scroll
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Semua link berfungsi dengan baik
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Tidak ada console errors
+            </div>
+        </div>
+
+        <div class="checklist">
+            <h3>Content Checklist:</h3>
+            <div class="checklist-item">
+                <input type="checkbox"> Nama pengantin benar
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Tanggal & waktu acara benar
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Lokasi akad & resepsi benar
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Foto berkualitas tinggi
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Link musik berfungsi
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Google Maps embed benar
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Video YouTube embed benar
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Nomor WhatsApp benar
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Tidak ada typo di teks
+            </div>
+        </div>
+
+        <!-- Optimization -->
+        <h2>⚡ Optimasi Sebelum Deploy</h2>
+        
+        <h3>1. Compress Gambar</h3>
+        <p>Kurangi ukuran file gambar tanpa mengurangi kualitas:</p>
+        <ul>
+            <li><a href="https://tinypng.com" target="_blank">TinyPNG</a> - Compress PNG & JPG</li>
+            <li><a href="https://imagecompressor.com" target="_blank">ImageCompressor</a> - Online tool</li>
+            <li>Tools lokal: ImageMagick, FFmpeg</li>
+        </ul>
+        
+        <h3>2. Minify CSS & JavaScript</h3>
+        <pre>// Gunakan online tools atau build tools
+// Online: minifier.org, jscompress.com
+// Tools: npm, webpack, gulp
+
+// Atau gunakan:</pre>
+        <ul>
+            <li><a href="https://javascript-minifier.com/" target="_blank">JavaScript Minifier</a></li>
+            <li><a href="https://cssminifier.com/" target="_blank">CSS Minifier</a></li>
+        </ul>
+        
+        <h3>3. Lazy Load Images</h3>
+        <pre>&lt;img src="placeholder.jpg" data-src="real-image.jpg" loading="lazy" /&gt;</pre>
+        
+        <h3>4. Enable Gzip Compression</h3>
+        <p>Aktifkan di server settings untuk mengurangi ukuran transfer</p>
+        
+        <h3>5. Caching Strategy</h3>
+        <pre># Buat .htaccess untuk caching
+&lt;IfModule mod_expires.c&gt;
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 week"
+  ExpiresByType image/jpeg "access plus 1 year"
+&lt;/IfModule&gt;</pre>
+
+        <!-- Hosting Platforms -->
+        <h2>🌐 Platform Hosting Rekomendasi</h2>
+        
+        <div class="comparison">
+            <div class="comparison-card">
+                <h4>🎯 Netlify</h4>
+                <div class="price">Gratis</div>
+                <ul>
+                    <li>Drag & drop deployment</li>
+                    <li>CDN global</li>
+                    <li>SSL gratis</li>
+                    <li>Form handling gratis</li>
+                    <li>Redirects unlimited</li>
+                </ul>
+                <a href="https://netlify.com" class="button" target="_blank">Deploy ke Netlify</a>
+            </div>
+            
+            <div class="comparison-card">
+                <h4>⚡ Vercel</h4>
+                <div class="price">Gratis</div>
+                <ul>
+                    <li>Auto deployment dari GitHub</li>
+                    <li>Preview deployment</li>
+                    <li>CDN global</li>
+                    <li>SSL included</li>
+                    <li>Edge functions</li>
+                </ul>
+                <a href="https://vercel.com" class="button" target="_blank">Deploy ke Vercel</a>
+            </div>
+            
+            <div class="comparison-card">
+                <h4>📄 GitHub Pages</h4>
+                <div class="price">Gratis</div>
+                <ul>
+                    <li>Hosting dari GitHub</li>
+                    <li>Custom domain support</li>
+                    <li>SSL gratis (HTTPS)</li>
+                    <li>Unlimited bandwidth</li>
+                    <li>Git version control</li>
+                </ul>
+                <a href="https://pages.github.com" class="button" target="_blank">Gunakan GitHub Pages</a>
+            </div>
+        </div>
+
+        <!-- Netlify Deployment -->
+        <h2>📦 Deployment ke Netlify (Cara Termudah)</h2>
+        
+        <div class="platform">
+            <h3><span class="icon">🎯</span> Opsi 1: Drag & Drop (Paling Mudah)</h3>
+            <div class="steps">
+                <div class="step-item">
+                    <strong>1.</strong> Buka <code>https://app.netlify.com</code>
+                </div>
+                <div class="step-item">
+                    <strong>2.</strong> Sign up dengan email atau GitHub
+                </div>
+                <div class="step-item">
+                    <strong>3.</strong> Buat folder dengan semua file (<code>index.html, css/, js/</code>)
+                </div>
+                <div class="step-item">
+                    <strong>4.</strong> Drag & drop folder ke Netlify
+                </div>
+                <div class="step-item">
+                    <strong>5.</strong> Tunggu selesai, klik link yang muncul
+                </div>
+                <div class="step-item">
+                    <strong>6.</strong> (Opsional) Beli domain atau gunakan subdomain gratis
+                </div>
+            </div>
+        </div>
+        
+        <div class="platform">
+            <h3><span class="icon">⚙️</span> Opsi 2: Connect GitHub (Lebih Powerful)</h3>
+            <div class="steps">
+                <div class="step-item">
+                    <strong>1.</strong> Push kode ke GitHub repository
+                </div>
+                <div class="step-item">
+                    <strong>2.</strong> Di Netlify, pilih "Connect to Git"
+                </div>
+                <div class="step-item">
+                    <strong>3.</strong> Pilih GitHub repository Anda
+                </div>
+                <div class="step-item">
+                    <strong>4.</strong> Set build settings (skip untuk static site)
+                </div>
+                <div class="step-item">
+                    <strong>5.</strong> Deploy! Auto-deploy saat ada push ke main branch
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Domain -->
+        <h2>🔗 Setup Custom Domain</h2>
+        
+        <div class="platform">
+            <h3><span class="icon">🌍</span> Menggunakan Domain Sendiri</h3>
+            <div class="steps">
+                <div class="step-item">
+                    <strong>1.</strong> Beli domain di Namecheap, GoDaddy, atau hosting provider lain
+                </div>
+                <div class="step-item">
+                    <strong>2.</strong> Di Netlify: Site Settings → Domain Management → Add Custom Domain
+                </div>
+                <div class="step-item">
+                    <strong>3.</strong> Follow instruksi untuk update DNS nameserver
+                </div>
+                <div class="step-item">
+                    <strong>4.</strong> DNS propagasi butuh 24-48 jam
+                </div>
+                <div class="step-item">
+                    <strong>5.</strong> Verifikasi selesai, HTTPS auto-setup
+                </div>
+            </div>
+        </div>
+
+        <!-- URL Invitation -->
+        <h2>📧 Generate Invitation Links untuk Setiap Tamu</h2>
+        
+        <div class="platform">
+            <h3>Membuat Link Personalisasi</h3>
+            <p>Contoh format link:</p>
+            <pre>https://ayureza-wedding.netlify.app/?to=Bambang%20Irawan
+https://ayureza-wedding.netlify.app/?to=Siti%20Nurhaliza
+https://ayureza-wedding.netlify.app/?to=Ahmad%20Pratama</pre>
+            
+            <p>Tools untuk URL encoding:</p>
+            <ul>
+                <li><a href="https://www.urlencoder.io/" target="_blank">URL Encoder</a></li>
+                <li>JavaScript: <code>encodeURIComponent('Nama Tamu')</code></li>
+                <li>Excel/Google Sheets: Gunakan formula atau script</li>
+            </ul>
+        </div>
+
+        <!-- Testing After Deployment -->
+        <h2>🧪 Testing Setelah Deploy</h2>
+        
+        <div class="checklist">
+            <div class="checklist-item">
+                <input type="checkbox"> Akses website via domain/URL
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test semua fitur kembali
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test di mobile network (3G/4G)
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Check loading speed (< 3 detik)
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Verify HTTPS working
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Check SEO di Google Search Console
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Test sharing ke social media
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox"> Monitor error logs
+            </div>
+        </div>
+
+        <!-- Monitoring & Maintenance -->
+        <h2>📊 Monitoring & Maintenance</h2>
+        
+        <h3>Tools Monitoring Gratis</h3>
+        <ul>
+            <li><a href="https://analytics.google.com" target="_blank">Google Analytics</a> - Tracking pengunjung</li>
+            <li><a href="https://www.uptimerrobot.com/" target="_blank">UptimeRobot</a> - Monitor uptime</li>
+            <li><a href="https://developers.google.com/speed/pagespeed/insights" target="_blank">PageSpeed Insights</a> - Performance check</li>
+            <li><a href="https://search.google.com/search-console" target="_blank">Google Search Console</a> - SEO monitoring</li>
+        </ul>
+        
+        <h3>Regular Maintenance</h3>
+        <ul>
+            <li>✓ Backup data guestbook secara berkala</li>
+            <li>✓ Monitor pesan & RSVP tamu</li>
+            <li>✓ Check loading speed bulanan</li>
+            <li>✓ Update konten jika ada perubahan</li>
+            <li>✓ Keep contact info tetap up-to-date</li>
+        </ul>
+
+        <!-- Security -->
+        <h2>🔐 Security Tips</h2>
+        
+        <div class="warning">
+            <strong>⚠️ Hal-hal penting untuk keamanan:</strong>
+            <ul>
+                <li>HTTPS sudah enabled (Netlify handle otomatis)</li>
+                <li>Jangan share nomor pribadi di public</li>
+                <li>Backup data guestbook (localStorage)</li>
+                <li>Validate input form di server jika ada backend</li>
+                <li>Gunakan strong password untuk domain</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <h2>❓ FAQ</h2>
+        
+        <div class="faq-item">
+            <strong>Q: Apakah website akan crash jika banyak visitor?</strong>
+            <p>A: Untuk static site di Netlify/Vercel, tidak akan crash. CDN mereka bisa handle jutaan request. RSVP form hanya menyimpan di localStorage lokal, bukan server.</p>
+        </div>
+        
+        <div class="faq-item">
+            <strong>Q: Bagaimana jika ingin save RSVP ke database?</strong>
+            <p>A: Gunakan backend service gratis seperti Firebase, Supabase, atau Formspree untuk handle form submission.</p>
+        </div>
+        
+        <div class="faq-item">
+            <strong>Q: Bisa pakai domain gratis selamanya?</strong>
+            <p>A: Ya! Netlify/Vercel kasih subdomain gratis selamanya. Atau pakai namecheap yang murah (~Rp10-20rb/tahun).</p>
+        </div>
+        
+        <div class="faq-item">
+            <strong>Q: Bagaimana share link ke 500+ tamu?</strong>
+            <p>A: Gunakan Excel/Google Sheets + script untuk generate link, atau kirim via WhatsApp bulk message.</p>
+        </div>
+        
+        <div class="faq-item">
+            <strong>Q: Apakah data guestbook disimpan permanent?</strong>
+            <p>A: Data tersimpan di localStorage browser tamu. Untuk permanent storage, gunakan backend/database.</p>
+        </div>
+
+        <!-- After Wedding -->
+        <h2>🎉 Setelah Pernikahan Selesai</h2>
+        
+        <ul>
+            <li>✓ <strong>Backup semua data:</strong> Download guestbook messages & RSVP list</li>
+            <li>✓ <strong>Thank you messages:</strong> Update website dengan galeri resepsi</li>
+            <li>✓ <strong>Keep live:</strong> Biarkan website live sebagai kenang-kenangan digital</li>
+            <li>✓ <strong>Gallery update:</strong> Tambah foto resepsi & honeymoon (opsional)</li>
+            <li>✓ <strong>Archive:</strong> Download semua file untuk archive selamanya</li>
+        </ul>
+
+        <div class="success">
+            <strong>✓ Siap Deploy!</strong>
+            <p>Ikuti langkah-langkah di atas dan website undangan pernikahan Anda akan live dalam hitungan menit.</p>
+        </div>
+
+        <!-- Support -->
+        <h2>📞 Butuh Bantuan?</h2>
+        
+        <p><strong>Resources Berguna:</strong></p>
+        <ul>
+            <li>📖 <a href="README.md" target="_blank">README.md</a> - Dokumentasi lengkap</li>
+            <li>⚡ <a href="QUICK_START.html" target="_blank">QUICK_START.html</a> - Panduan cepat</li>
+            <li>💻 <a href="js/CUSTOMIZATION_EXAMPLES.js" target="_blank">CUSTOMIZATION_EXAMPLES.js</a> - Contoh kode</li>
+            <li>🔗 <a href="https://www.netlify.com/blog/" target="_blank">Netlify Blog</a> - Tips & tutorial</li>
+            <li>🎓 <a href="https://www.youtube.com/results?search_query=netlify+tutorial" target="_blank">YouTube Tutorial</a></li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #D4A574;">
+            <h3 style="color: #D4A574;">Selamat Deploy! 🚀</h3>
+            <p style="color: #666; font-size: 1.1rem;">Semoga undangan pernikahan digital Anda menjadi momen yang sempurna.</p>
+            <p style="color: #999; margin-top: 2rem;">Created with ❤️ for your special day</p>
+        </div>
+    </div>
+</body>
+</html>

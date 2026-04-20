@@ -1,0 +1,529 @@
+<!-- 
+    🎉 QUICK START GUIDE - Undangan Pernikahan Digital
+    Panduan Cepat untuk Memulai
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start Guide - Undangan Pernikahan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFF0F5 100%);
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #D4A574;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #3D2817;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #D4A574;
+            padding-bottom: 0.5rem;
+        }
+        
+        .step {
+            background: #FFF8F3;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 5px solid #D4A574;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #D4A574;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .step h3 {
+            color: #3D2817;
+            display: inline-block;
+            margin-top: 0;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: #D4A574;
+        }
+        
+        pre {
+            background: #2D1810;
+            color: #D4A574;
+            padding: 1rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+        
+        ul {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        .important {
+            background: #FFF0F5;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #C08081;
+            margin: 1.5rem 0;
+        }
+        
+        .tip {
+            background: #E8F5E9;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
+            margin: 1.5rem 0;
+        }
+        
+        .success {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table th, table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background: #D4A574;
+            color: white;
+        }
+        
+        table tr:hover {
+            background: #FFF8F3;
+        }
+        
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4A574, #C19A6B);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+        }
+        
+        .file-structure {
+            background: #2D1810;
+            color: #D4A574;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: monospace;
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Undangan Pernikahan Digital</h1>
+        <h1 style="font-size: 1.5rem; margin-top: -1rem;">Quick Start Guide</h1>
+        
+        <div class="success">
+            ✓ Website siap digunakan! Ikuti panduan ini untuk personalisasi.
+        </div>
+
+        <!-- Langkah 1 -->
+        <h2>📋 Langkah 1: Memahami Struktur File</h2>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <h3>File-file Anda</h3>
+            <p>Pastikan Anda memiliki struktur folder seperti ini:</p>
+            <div class="file-structure">
+📁 UNDANGAN PERNIKAHAN/<br>
+├── 📄 index.html<br>
+├── 📁 css/<br>
+│   └── 📄 style.css<br>
+├── 📁 js/<br>
+│   ├── 📄 config.js<br>
+│   └── 📄 main.js<br>
+├── 📄 README.md<br>
+└── 📄 QUICK_START.html (file ini)
+            </div>
+        </div>
+
+        <!-- Langkah 2 -->
+        <h2>✏️ Langkah 2: Edit Informasi Pengantin</h2>
+        
+        <div class="step">
+            <span class="step-number">2</span>
+            <h3>Buka <code>js/config.js</code> dan ubah:</h3>
+            <pre>const weddingConfig = {
+    brideGroom: {
+        groom: 'NAMA_PRIA_ANDA',      // ← Ganti
+        bride: 'NAMA_WANITA_ANDA',    // ← Ganti
+        shortNames: 'GANTI & GANTI'   // ← Ganti
+    },
+    eventDate: {
+        date: '2024-05-25',           // ← Ganti (YYYY-MM-DD)
+        year: 2024,
+        month: 5,
+        day: 25
+    }
+}</pre>
+        </div>
+
+        <!-- Langkah 3 -->
+        <h2>🏢 Langkah 3: Update Lokasi Acara</h2>
+        
+        <div class="step">
+            <span class="step-number">3</span>
+            <h3>Di file <code>js/config.js</code>, ubah lokasi:</h3>
+            <pre>events: {
+    akad: {
+        time: '09:00',
+        endTime: '10:00',
+        location: 'NAMA_MASJID_ANDA'  // ← Ganti
+    },
+    resepsi: {
+        time: '11:00',
+        endTime: '16:00',
+        location: 'NAMA_GEDUNG_ANDA'  // ← Ganti
+    }
+}</pre>
+        </div>
+
+        <!-- Langkah 4 -->
+        <h2>📱 Langkah 4: Update Kontak WhatsApp</h2>
+        
+        <div class="step">
+            <span class="step-number">4</span>
+            <h3>Di file <code>js/config.js</code>, ubah nomor WhatsApp:</h3>
+            <pre>contacts: {
+    whatsapp: '62812345678',  // ← Ganti (format: 62...)
+    instagram: 'username_anda',
+    email: 'email@anda.com'
+}</pre>
+            <p><strong>Format WhatsApp:</strong> Gunakan format 62, contoh: 62812345678</p>
+        </div>
+
+        <!-- Langkah 5 -->
+        <h2>🎶 Langkah 5: Update Musik Background (Opsional)</h2>
+        
+        <div class="step">
+            <span class="step-number">5</span>
+            <h3>Buka <code>index.html</code> dan cari elemen <code>&lt;audio&gt;</code>:</h3>
+            <pre>&lt;audio id="bgMusic" loop&gt;
+    &lt;source src="GANTI_URL_MUSIK.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</pre>
+            <p><strong>Sumber Musik Gratis:</strong></p>
+            <ul>
+                <li>Pixabay Music (https://pixabay.com/music/)</li>
+                <li>FreePik (https://freepik.com/)</li>
+                <li>YouTube Audio Library</li>
+            </ul>
+        </div>
+
+        <!-- Langkah 6 -->
+        <h2>📸 Langkah 6: Tambah Galeri Foto</h2>
+        
+        <div class="step">
+            <span class="step-number">6</span>
+            <h3>Edit section <code>#galeri</code> di <code>index.html</code>:</h3>
+            <pre>&lt;a href="LINK_FOTO_BESAR.jpg" data-lightbox="gallery"&gt;
+    &lt;img src="LINK_FOTO_KECIL.jpg" alt="Deskripsi"&gt;
+    &lt;div class="gallery-overlay"&gt;
+        &lt;i class="fas fa-search-plus"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+&lt;/a&gt;</pre>
+            <p><strong>Opsi Foto:</strong></p>
+            <ul>
+                <li>Gunakan URL dari Unsplash/Pixabay (gratis)</li>
+                <li>Upload ke ImgBB, Imgur, atau layanan hosting foto</li>
+                <li>Gunakan foto lokal jika di-host sendiri</li>
+            </ul>
+        </div>
+
+        <!-- Langkah 7 -->
+        <h2>💕 Langkah 7: Update Love Story</h2>
+        
+        <div class="step">
+            <span class="step-number">7</span>
+            <h3>Edit section <code>#cerita</code> untuk cerita pribadi Anda</h3>
+            <pre>&lt;div class="story-item"&gt;
+    &lt;div class="story-content"&gt;
+        &lt;h3 class="story-year"&gt;2020&lt;/h3&gt;
+        &lt;h4 class="story-title"&gt;Judul Cerita&lt;/h4&gt;
+        &lt;p class="story-text"&gt;Cerita indah kalian...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- Langkah 8 -->
+        <h2>🗺️ Langkah 8: Update Google Maps (Opsional)</h2>
+        
+        <div class="step">
+            <span class="step-number">8</span>
+            <h3>Untuk mengubah lokasi maps:</h3>
+            <ol>
+                <li>Buka <a href="https://www.google.com/maps" target="_blank">Google Maps</a></li>
+                <li>Cari lokasi acara Anda</li>
+                <li>Klik "Share" → "Embed a map"</li>
+                <li>Copy iframe code</li>
+                <li>Paste di section <code>#acara</code> di <code>index.html</code></li>
+            </ol>
+        </div>
+
+        <!-- Langkah 9 -->
+        <h2>🎥 Langkah 9: Update Video Prewedding</h2>
+        
+        <div class="step">
+            <span class="step-number">9</span>
+            <h3>Ubah video YouTube di section <code>#galeri</code>:</h3>
+            <pre>&lt;iframe 
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="Prewedding Video" 
+    frameborder="0"&gt;
+&lt;/iframe&gt;</pre>
+            <p><strong>Cara mendapat VIDEO_ID:</strong></p>
+            <ul>
+                <li>Buka video di YouTube</li>
+                <li>URL: https://www.youtube.com/watch?v=<strong>dQw4w9WgXcQ</strong></li>
+                <li>Bagian bold adalah VIDEO_ID</li>
+            </ul>
+        </div>
+
+        <!-- Langkah 10 -->
+        <h2>🎨 Langkah 10: Ganti Tema Warna (Opsional)</h2>
+        
+        <div class="step">
+            <span class="step-number">10</span>
+            <h3>Edit <code>css/style.css</code> di bagian atas:</h3>
+            <pre>:root {
+    --primary-gold: #D4A574;    /* Warna emas - ganti di sini */
+    --dark-brown: #3D2817;      /* Warna teks - ganti di sini */
+    --light-pink: #FFF0F5;      /* Warna pink - ganti di sini */
+}</pre>
+            <p><strong>Kombinasi Warna Rekomendasi:</strong></p>
+            <table>
+                <tr>
+                    <th>Tema</th>
+                    <th>Gold</th>
+                    <th>Brown</th>
+                </tr>
+                <tr>
+                    <td>Classic Gold</td>
+                    <td>#D4A574</td>
+                    <td>#3D2817</td>
+                </tr>
+                <tr>
+                    <td>Rose Gold</td>
+                    <td>#E8A5C1</td>
+                    <td>#6B3E42</td>
+                </tr>
+                <tr>
+                    <td>Silver Elegance</td>
+                    <td>#C0C0C0</td>
+                    <td>#2C2C2C</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Langkah 11 -->
+        <h2>🔗 Langkah 11: Buat Invitation Link Unik</h2>
+        
+        <div class="step">
+            <span class="step-number">11</span>
+            <h3>Untuk setiap tamu, gunakan format:</h3>
+            <pre>https://yoursite.com/?to=NamaTamu</pre>
+            <p><strong>Contoh:</strong></p>
+            <ul>
+                <li>https://ayureza.com/?to=Bambang%20Irawan</li>
+                <li>https://ayureza.com/?to=Siti%20Nurhaliza</li>
+                <li>https://ayureza.com/?to=Ahmad%20Pratama</li>
+            </ul>
+            <p><strong>Tips:</strong> Ganti spasi dengan %20, atau gunakan URL encoder online</p>
+        </div>
+
+        <!-- Langkah 12 -->
+        <h2>🚀 Langkah 12: Test & Deploy</h2>
+        
+        <div class="step">
+            <span class="step-number">12</span>
+            <h3>Sebelum deploy:</h3>
+            <ul>
+                <li>✓ Buka <code>index.html</code> di browser (Chrome, Firefox, Safari)</li>
+                <li>✓ Test di desktop, tablet, dan mobile</li>
+                <li>✓ Test countdown timer</li>
+                <li>✓ Test musik play/pause</li>
+                <li>✓ Test RSVP form</li>
+                <li>✓ Test galeri foto (lightbox)</li>
+                <li>✓ Test toggle bahasa</li>
+            </ul>
+            
+            <h4 style="margin-top: 1rem;">Deploy ke Hosting Gratis:</h4>
+            <ul>
+                <li><strong>Netlify:</strong> Drag & drop folder, instant live</li>
+                <li><strong>Vercel:</strong> Connect GitHub, auto-deploy</li>
+                <li><strong>GitHub Pages:</strong> Push ke GitHub, enable Pages</li>
+                <li><strong>Firebase:</strong> Firebase CLI commands</li>
+            </ul>
+        </div>
+
+        <!-- Important Info -->
+        <div class="important">
+            <strong>⚠️ PENTING:</strong>
+            <ul>
+                <li>Pastikan semua file dalam satu folder</li>
+                <li>Tidak perlu mengubah CSS atau JavaScript jika hanya personalisasi</li>
+                <li>Ganti URL foto & musik dengan yang valid</li>
+                <li>Test semua fitur sebelum membagikan link</li>
+            </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="tip">
+            <strong>💡 TIPS TAMBAHAN:</strong>
+            <ul>
+                <li>Gunakan foto berkualitas tinggi (minimum 1200x1200px)</li>
+                <li>Compress foto untuk mempercepat loading: https://tinypng.com/</li>
+                <li>Test di berbagai browser</li>
+                <li>Update konten berdasarkan feedback tamu</li>
+                <li>Share link unik ke setiap tamu untuk tracking personal</li>
+            </ul>
+        </div>
+
+        <!-- Checklists -->
+        <h2>✅ Checklist Personalisasi</h2>
+        
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Nama pengantin (config.js)</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Tanggal pernikahan</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Lokasi akad & resepsi</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Nomor WhatsApp</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Musik background</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Galeri foto (minimal 6)</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Love story</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Video prewedding</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Google Maps lokasi</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Tema warna (opsional)</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Test di mobile</td>
+                <td>[ ] Selesai</td>
+            </tr>
+            <tr>
+                <td>Deploy ke hosting</td>
+                <td>[ ] Selesai</td>
+            </tr>
+        </table>
+
+        <!-- Contact -->
+        <h2>💬 Butuh Bantuan?</h2>
+        
+        <div class="step">
+            <h3>Referensi Lengkap:</h3>
+            <ul>
+                <li>📄 Baca file <strong>README.md</strong> untuk dokumentasi lengkap</li>
+                <li>🔧 Lihat code comments untuk penjelasan detail</li>
+                <li>🐛 Debug dengan Alt+D di keyboard untuk info debug</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            🎉 Selamat! Website undangan Anda sudah siap.<br>
+            Semoga menjadi momen istimewa yang tak terlupakan! ❤️
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; color: #999;">
+            <p>Undangan Pernikahan Digital v1.0</p>
+            <p style="font-size: 0.85rem;">Created with ❤️ for your special day</p>
+        </div>
+    </div>
+</body>
+</html>

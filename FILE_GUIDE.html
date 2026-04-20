@@ -1,0 +1,728 @@
+<!-- 
+    📋 INDEX & FILE GUIDE - Undangan Pernikahan Digital
+    Panduan Lengkap Semua File yang Tersedia
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Guide - Undangan Pernikahan Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFF0F5 100%);
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #D4A574;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        h2 {
+            color: #3D2817;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #D4A574;
+            padding-bottom: 0.5rem;
+        }
+        
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .file-card {
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFF0F5 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #D4A574;
+            transition: transform 0.3s;
+        }
+        
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.2);
+        }
+        
+        .file-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .file-card h3 {
+            color: #3D2817;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .file-card code {
+            background: #f5f5f5;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            color: #D4A574;
+        }
+        
+        .file-card p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .file-card .purpose {
+            background: white;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            border-left: 3px solid #C08081;
+        }
+        
+        .purpose strong {
+            color: #3D2817;
+        }
+        
+        .quick-nav {
+            background: #FFF0F5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-nav h3 {
+            color: #3D2817;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4A574, #C19A6B);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+        }
+        
+        .structure {
+            background: #2D1810;
+            color: #D4A574;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #D4A574, #C19A6B);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .timeline {
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-number {
+            background: #D4A574;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-content h4 {
+            color: #3D2817;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            margin: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        table th {
+            background: #D4A574;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:hover {
+            background: #FFF8F3;
+        }
+        
+        .note {
+            background: #fff3cd;
+            padding: 1rem;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            padding: 1rem;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .feature-list {
+            columns: 2;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.8rem;
+            break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 File Guide & Index</h1>
+        <p class="subtitle">Panduan lengkap semua file dalam project undangan pernikahan digital</p>
+
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <h3>🚀 Mulai Dari Sini:</h3>
+            <div class="nav-grid">
+                <a href="QUICK_START.html" class="nav-button">⚡ Quick Start</a>
+                <a href="index.html" class="nav-button">🎉 Buka Website</a>
+                <a href="README.md" class="nav-button">📖 Dokumentasi</a>
+                <a href="DEPLOYMENT_GUIDE.html" class="nav-button">🚀 Deploy</a>
+            </div>
+        </div>
+
+        <!-- Project Statistics -->
+        <h2>📊 Project Statistics</h2>
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">1,700+</div>
+                <div class="stat-label">Lines of Code</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">8</div>
+                <div class="stat-label">File Utama</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Fitur Lengkap</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Bahasa Support</div>
+            </div>
+        </div>
+
+        <!-- Folder Structure -->
+        <h2>📁 Struktur File & Folder</h2>
+        <div class="structure">
+📁 UNDANGAN PERNIKAHAN/<br>
+├── 📄 <strong>index.html</strong> ........................ Website utama<br>
+├── 📄 <strong>QUICK_START.html</strong> ............... Panduan cepat<br>
+├── 📄 <strong>DEPLOYMENT_GUIDE.html</strong> ......... Panduan deploy<br>
+├── 📄 <strong>FILE_GUIDE.html</strong> ............... File ini<br>
+├── 📄 <strong>README.md</strong> ..................... Dokumentasi lengkap<br>
+├── 📁 css/<br>
+│   └── 📄 style.css ..................... Styling & CSS<br>
+├── 📁 js/<br>
+│   ├── 📄 config.js .................... Konfigurasi & bahasa<br>
+│   ├── 📄 main.js ..................... Logika utama & interaktivitas<br>
+│   └── 📄 CUSTOMIZATION_EXAMPLES.js ... Contoh customization<br>
+└── 📄 FILE_GUIDE.html ................. Panduan file (ini)
+        </div>
+
+        <!-- File Details -->
+        <h2>📄 Penjelasan Detail Setiap File</h2>
+
+        <div class="file-grid">
+            <!-- index.html -->
+            <div class="file-card">
+                <div class="icon">🎉</div>
+                <h3><code>index.html</code></h3>
+                <p>File utama website - struktur HTML semantic</p>
+                <div class="purpose">
+                    <strong>Tujuan:</strong> Markup lengkap website dengan semua section
+                </div>
+                <p><strong>Bagian-bagian:</strong></p>
+                <ul>
+                    <li>Opening/cover screen</li>
+                    <li>Navigation bar</li>
+                    <li>Welcome section</li>
+                    <li>Event information</li>
+                    <li>Love story timeline</li>
+                    <li>Gallery & video</li>
+                    <li>RSVP form</li>
+                    <li>Guestbook</li>
+                    <li>Footer</li>
+                </ul>
+                <p><strong>Lines:</strong> ~700 | <strong>Edit untuk:</strong> Mengubah konten, menambah section</p>
+            </div>
+
+            <!-- style.css -->
+            <div class="file-card">
+                <div class="icon">🎨</div>
+                <h3><code>css/style.css</code></h3>
+                <p>Styling lengkap dengan responsive design</p>
+                <div class="purpose">
+                    <strong>Tujuan:</strong> Styling semua elemen dan responsivitas
+                </div>
+                <p><strong>Fitur:</strong></p>
+                <ul>
+                    <li>CSS Variables untuk tema</li>
+                    <li>Flexbox & Grid</li>
+                    <li>Media queries responsive</li>
+                    <li>Smooth transitions</li>
+                    <li>Animation keyframes</li>
+                </ul>
+                <p><strong>Lines:</strong> ~1000 | <strong>Edit untuk:</strong> Ganti warna, font, layout</p>
+            </div>
+
+            <!-- config.js -->
+            <div class="file-card">
+                <div class="icon">⚙️</div>
+                <h3><code>js/config.js</code></h3>
+                <p>Konfigurasi bahasa dan data pernikahan</p>
+                <div class="purpose">
+                    <strong>Tujuan:</strong> Menyimpan semua teks multi-bahasa dan data pernikahan
+                </div>
+                <p><strong>Berisi:</strong></p>
+                <ul>
+                    <li>Konfigurasi bahasa (ID & EN)</li>
+                    <li>Data pengantin & acara</li>
+                    <li>Kontak & lokasi</li>
+                    <li>Sample guestbook messages</li>
+                </ul>
+                <p><strong>Lines:</strong> ~200 | <strong>Edit untuk:</strong> Personalisasi konten</p>
+            </div>
+
+            <!-- main.js -->
+            <div class="file-card">
+                <div class="icon">⚡</div>
+                <h3><code>js/main.js</code></h3>
+                <p>Logika utama dan interaktivitas</p>
+                <div class="purpose">
+                    <strong>Tujuan:</strong> Handle semua fungsi JavaScript dan GSAP animations
+                </div>
+                <p><strong>Module-module:</strong></p>
+                <ul>
+                    <li>Language system</li>
+                    <li>Music control</li>
+                    <li>Opening animation</li>
+                    <li>Countdown timer</li>
+                    <li>Form handling</li>
+                    <li>GSAP animations</li>
+                    <li>Guestbook system</li>
+                </ul>
+                <p><strong>Lines:</strong> ~500 | <strong>Edit untuk:</strong> Tambah fitur</p>
+            </div>
+
+            <!-- QUICK_START.html -->
+            <div class="file-card">
+                <div class="icon">⚡</div>
+                <h3><code>QUICK_START.html</code></h3>
+                <p>Panduan cepat dalam 12 langkah</p>
+                <div class="purpose">
+                    <strong>Tujuan:</strong> Memandu pengguna setup dalam langkah-langkah sederhana
+                </div>
+                <p><strong>Mencakup:</strong></p>
+                <ul>
+                    <li>Personalisasi nama pengantin</li>
+                    <li>Update tanggal & lokasi</li>
+                    <li>Ganti musik</li>
+                    <li>Update galeri foto</li>
+                    <li>Custom theme warna</li>
+                    <li>Deploy checklist</li>
+                </ul>
+                <p><strong>Format:</strong> HTML interaktif | <strong>Buka di:</strong> Browser</p>
+            </div>
+
+            <!-- README.md -->
+            <div class="file-card">
+                <div class="icon">📖</div>
+                <h3><code>README.md</code></h3>
+                <p>Dokumentasi lengkap dan comprehensive</p>
+                <div class="purpose">
+                    <strong>Tujuan:</strong> Referensi lengkap untuk developer & user
+                </div>
+                <p><strong>Topik:</strong></p>
+                <ul>
+                    <li>Fitur lengkap</li>
+                    <li>Struktur file</li>
+                    <li>Cara penggunaan</li>
+                    <li>Kustomisasi detail</li>
+                    <li>Browser support</li>
+                    <li>Troubleshooting</li>
+                </ul>
+                <p><strong>Format:</strong> Markdown | <strong>Baca di:</strong> GitHub atau text editor</p>
+            </div>
+
+            <!-- DEPLOYMENT_GUIDE.html -->
+            <div class="file-card">
+                <div class="icon">🚀</div>
+                <h3><code>DEPLOYMENT_GUIDE.html</code></h3>
+                <p>Panduan lengkap deploy ke production</p>
+                <div class="purpose">
+                    <strong>Tujuan:</strong> Memandu deploy ke berbagai hosting platform
+                </div>
+                <p><strong>Mencakup:</strong></p>
+                <ul>
+                    <li>Pre-deployment checklist</li>
+                    <li>Optimization tips</li>
+                    <li>Platform hosting</li>
+                    <li>Custom domain setup</li>
+                    <li>Testing after deploy</li>
+                    <li>Monitoring & maintenance</li>
+                </ul>
+                <p><strong>Format:</strong> HTML interaktif | <strong>Buka di:</strong> Browser</p>
+            </div>
+
+            <!-- CUSTOMIZATION_EXAMPLES.js -->
+            <div class="file-card">
+                <div class="icon">💡</div>
+                <h3><code>js/CUSTOMIZATION_EXAMPLES.js</code></h3>
+                <p>Contoh-contoh kode untuk customization</p>
+                <div class="purpose">
+                    <strong>Tujuan:</strong> Referensi kode untuk advanced customization
+                </div>
+                <p><strong>Contoh mencakup:</strong></p>
+                <ul>
+                    <li>Custom animations GSAP</li>
+                    <li>Theme warna pra-definisi</li>
+                    <li>Social media sharing</li>
+                    <li>Advanced guestbook</li>
+                    <li>Analytics tracking</li>
+                    <li>Performance optimization</li>
+                </ul>
+                <p><strong>Format:</strong> JavaScript | <strong>Gunakan:</strong> Copy-paste kode</p>
+            </div>
+        </div>
+
+        <!-- Getting Started Timeline -->
+        <h2>🎯 Panduan Memulai (Step by Step)</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <h4>Baca QUICK_START.html</h4>
+                    <p>Mulai dari panduan cepat untuk setup awal dalam 12 langkah mudah</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <h4>Edit js/config.js</h4>
+                    <p>Ganti nama pengantin, tanggal, lokasi, dan kontak WhatsApp</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <h4>Update index.html</h4>
+                    <p>Tambah galeri foto, update love story, ganti musik background</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                    <h4>Customize Design (Opsional)</h4>
+                    <p>Edit warna di css/style.css, ganti font, atau baca CUSTOMIZATION_EXAMPLES.js</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                    <h4>Test Locally</h4>
+                    <p>Buka index.html di browser dan test semua fitur (desktop & mobile)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">6</div>
+                <div class="timeline-content">
+                    <h4>Baca DEPLOYMENT_GUIDE.html</h4>
+                    <p>Ikuti panduan deploy ke hosting (Netlify/Vercel/GitHub Pages)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">7</div>
+                <div class="timeline-content">
+                    <h4>Deploy & Go Live</h4>
+                    <p>Push ke hosting, setup domain, dan bagikan link ke tamu</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Overview -->
+        <h2>✨ Fitur-Fitur Utama</h2>
+
+        <table>
+            <tr>
+                <th>Kategori</th>
+                <th>Fitur</th>
+                <th>File yang Handle</th>
+            </tr>
+            <tr>
+                <td><strong>🎨 Design</strong></td>
+                <td>Modern responsive, tema warna soft, animasi smooth</td>
+                <td>style.css, main.js</td>
+            </tr>
+            <tr>
+                <td><strong>🎬 Animasi</strong></td>
+                <td>GSAP ScrollTrigger, fade-in, parallax, timeline</td>
+                <td>main.js</td>
+            </tr>
+            <tr>
+                <td><strong>⏱️ Countdown</strong></td>
+                <td>Timer real-time menuju hari pernikahan</td>
+                <td>main.js</td>
+            </tr>
+            <tr>
+                <td><strong>📸 Galeri</strong></td>
+                <td>Grid layout dengan lightbox effect</td>
+                <td>index.html, style.css</td>
+            </tr>
+            <tr>
+                <td><strong>📝 RSVP</strong></td>
+                <td>Form submission dengan validation</td>
+                <td>index.html, main.js</td>
+            </tr>
+            <tr>
+                <td><strong>💬 Guestbook</strong></td>
+                <td>Tambah & tampil pesan real-time</td>
+                <td>main.js (localStorage)</td>
+            </tr>
+            <tr>
+                <td><strong>🌐 Multi-Bahasa</strong></td>
+                <td>Support Indonesia & English dengan toggle</td>
+                <td>config.js, main.js</td>
+            </tr>
+            <tr>
+                <td><strong>🎵 Musik</strong></td>
+                <td>Background music autoplay dengan kontrol</td>
+                <td>index.html, main.js</td>
+            </tr>
+            <tr>
+                <td><strong>📱 Personalisasi</strong></td>
+                <td>URL parameter (?to=nama) untuk nama tamu</td>
+                <td>main.js</td>
+            </tr>
+            <tr>
+                <td><strong>🗺️ Maps & Video</strong></td>
+                <td>Google Maps embed & YouTube video</td>
+                <td>index.html</td>
+            </tr>
+        </table>
+
+        <!-- Quick Reference -->
+        <h2>🔖 Quick Reference</h2>
+
+        <div class="note">
+            <strong>Untuk Mengubah Konten:</strong>
+            <ul>
+                <li>Nama pengantin → Edit <code>config.js</code> & <code>index.html</code></li>
+                <li>Tanggal & waktu → Edit <code>config.js</code> & <code>index.html</code></li>
+                <li>Teks bahasa → Edit <code>config.js</code> (languages object)</li>
+                <li>Warna tema → Edit <code>style.css</code> (:root variables)</li>
+                <li>Musik → Edit <code>index.html</code> (audio src)</li>
+                <li>Galeri foto → Edit <code>index.html</code> (gallery section)</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <strong>Untuk Menambah Fitur:</strong>
+            <ul>
+                <li>Custom animasi → Lihat <code>CUSTOMIZATION_EXAMPLES.js</code></li>
+                <li>Social sharing → Copy dari <code>CUSTOMIZATION_EXAMPLES.js</code></li>
+                <li>Analytics → Copy tracking function dari examples</li>
+                <li>Backend integration → Edit <code>main.js</code> form handler</li>
+            </ul>
+        </div>
+
+        <!-- Technology Stack -->
+        <h2>🛠️ Technology Stack</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+            <div style="background: #FFF8F3; padding: 1rem; border-radius: 8px; border-left: 4px solid #D4A574;">
+                <strong style="color: #3D2817;">Frontend</strong>
+                <ul style="list-style: none; margin-top: 0.5rem;">
+                    <li>✓ HTML5 semantic</li>
+                    <li>✓ CSS3 (Grid & Flexbox)</li>
+                    <li>✓ JavaScript Vanilla</li>
+                </ul>
+            </div>
+
+            <div style="background: #FFF8F3; padding: 1rem; border-radius: 8px; border-left: 4px solid #D4A574;">
+                <strong style="color: #3D2817;">Libraries</strong>
+                <ul style="list-style: none; margin-top: 0.5rem;">
+                    <li>✓ GSAP 3.12+</li>
+                    <li>✓ ScrollTrigger</li>
+                    <li>✓ Lightbox2</li>
+                </ul>
+            </div>
+
+            <div style="background: #FFF8F3; padding: 1rem; border-radius: 8px; border-left: 4px solid #D4A574;">
+                <strong style="color: #3D2817;">Tools</strong>
+                <ul style="list-style: none; margin-top: 0.5rem;">
+                    <li>✓ Font Awesome Icons</li>
+                    <li>✓ Google Fonts</li>
+                    <li>✓ LocalStorage API</li>
+                </ul>
+            </div>
+
+            <div style="background: #FFF8F3; padding: 1rem; border-radius: 8px; border-left: 4px solid #D4A574;">
+                <strong style="color: #3D2817;">APIs</strong>
+                <ul style="list-style: none; margin-top: 0.5rem;">
+                    <li>✓ Google Maps Embed</li>
+                    <li>✓ YouTube Embed</li>
+                    <li>✓ WhatsApp API</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Support & Help -->
+        <h2>💬 Bantuan & Support</h2>
+
+        <div class="success">
+            <strong>✓ Resources Tersedia:</strong>
+            <ul class="feature-list">
+                <li>📖 README.md - Dokumentasi lengkap</li>
+                <li>⚡ QUICK_START.html - Panduan cepat 12 langkah</li>
+                <li>🚀 DEPLOYMENT_GUIDE.html - Panduan deploy ke hosting</li>
+                <li>💡 CUSTOMIZATION_EXAMPLES.js - Contoh kode advanced</li>
+                <li>🎉 index.html - Website utama dengan komentar</li>
+                <li>⌨️ Keyboard shortcuts (Alt+L, Alt+M, Alt+D)</li>
+            </ul>
+        </div>
+
+        <!-- Next Steps -->
+        <h2>🎯 Langkah Selanjutnya</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+            <a href="QUICK_START.html" style="background: linear-gradient(135deg, #D4A574, #C19A6B); color: white; padding: 1.5rem; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 600; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                ⚡ Quick Start
+            </a>
+            <a href="index.html" style="background: linear-gradient(135deg, #D4A574, #C19A6B); color: white; padding: 1.5rem; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 600; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                🎉 Buka Website
+            </a>
+            <a href="README.md" style="background: linear-gradient(135deg, #D4A574, #C19A6B); color: white; padding: 1.5rem; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 600; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                📖 Dokumentasi
+            </a>
+            <a href="DEPLOYMENT_GUIDE.html" style="background: linear-gradient(135deg, #D4A574, #C19A6B); color: white; padding: 1.5rem; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 600; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                🚀 Deploy
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #D4A574;">
+            <h3 style="color: #D4A574;">Selamat Menggunakan! 🎉</h3>
+            <p style="color: #666; font-size: 1.1rem;">Semoga website undangan pernikahan Anda sempurna dan berkesan.</p>
+            <p style="color: #999; margin-top: 2rem;">Created with ❤️ for your special day</p>
+        </div>
+    </div>
+</body>
+</html>
