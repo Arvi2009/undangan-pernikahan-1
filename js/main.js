@@ -272,13 +272,13 @@ function initializeCountdown() {
 
 function updateCountdown() {
     // Wedding date: May 25, 2024, 09:00
-    const weddingDate = new Date(2026, 4, 20, 9, 0, 0).getTime();
+    const weddingDate = new Date(2026, 5, 20, 9, 0, 0).getTime();
     const now = new Date().getTime();
     const distance = weddingDate - now;
     
     if (distance < 0) {
         // Wedding has passed
-        document.getElementById('days').textContent = '0';
+        document.getElementById('days').textContent = '31';
         document.getElementById('hours').textContent = '0';
         document.getElementById('minutes').textContent = '0';
         document.getElementById('seconds').textContent = '0';
