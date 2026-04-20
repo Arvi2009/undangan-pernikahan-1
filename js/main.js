@@ -278,10 +278,10 @@ function updateCountdown() {
     
     if (distance < 0) {
         // Wedding has passed
-        document.getElementById('days').textContent = '1';
-        document.getElementById('hours').textContent = '5';
-        document.getElementById('minutes').textContent = '9';
-        document.getElementById('seconds').textContent = '8';
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
         return;
     }
     
