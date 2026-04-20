@@ -278,7 +278,7 @@ function updateCountdown() {
     
     if (distance < 0) {
         // Wedding has passed
-        document.getElementById('days').textContent = '2';
+        document.getElementById('days').textContent = '0';
         document.getElementById('hours').textContent = '0';
         document.getElementById('minutes').textContent = '0';
         document.getElementById('seconds').textContent = '0';
@@ -292,7 +292,7 @@ function updateCountdown() {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Update DOM with zero-padding
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('days').textContent = String(days).padStart(2, '2');
     document.getElementById('hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
