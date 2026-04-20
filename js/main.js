@@ -292,10 +292,10 @@ function updateCountdown() {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Update DOM with zero-padding
-    document.getElementById('days').textContent = String(days).padStart(2, '2');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('days').textContent = String(days).padStart(2, '1');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '8');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '9');
 }
 
 // ============================================
